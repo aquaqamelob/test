@@ -9,26 +9,17 @@
   </head>
   <body>
     <div class="navbar glass">
-      <div class="dropdown dropdown-disabled">
-        <div class="dropdown-menu">
-          <a href="">a</a>
-          <a href="">a</a>
-          <a href="">a</a>
-          <a href="">a</a>
-          <a href="">a</a>
-        </div>
+      <div id="dropdown-toggle" class="toggle">
+        <div class="line"></div>
+        <div class="line"></div>
       </div>
-      <a href="#blue">blue</a>
-      <a href="#green">green</a>
-      <a href="#red">red</a>
       <img src="crown2.png" alt="crown" class="logo-img" />
-      <div id="dropdown-toggle" class="toggle">X</div>
+      <div class="toggle"></div>
     </div>
 
     <div class="container">
       <div class="div blue" id="blue">
         <h1>Hello</h1>
-        <div class="blob"></div>
       </div>
       <div class="div green" id="green">
         <h1>Hello</h1>
@@ -39,18 +30,33 @@
       <div class="div3 yellow" id="yellow">
         <h1>Hello</h1>
       </div>
-      <div class="div2 yellow" id="yellow">
+      <div class="div2 red" id="red">
         <h1>Hello</h1>
+      </div>
+    </div>
+
+    <div class="dropdown dropdown-disabled">
+      <div class="dropdown-menu">
+        <a href="" class="dropdown-menu-item">a</a>
+        <a href="" class="dropdown-menu-item">a</a>
+        <a href="" class="dropdown-menu-item">a</a>
+        <a href="" class="dropdown-menu-item">a</a>
       </div>
     </div>
 
     <script>
       const dropdown = document.querySelector('.dropdown');
       const dropdownToggle = document.querySelector('#dropdown-toggle');
+      const navbar = document.querySelector('.navbar');
+      const dropdownItems = document.querySelectorAll('a');
 
       dropdownToggle.addEventListener('click', () => {
         dropdown.classList.toggle('dropdown-disabled');
         dropdown.classList.toggle('dropdown-active');
+        navbar.classList.toggle('navbar-active');
+        dropdownItems.forEach((item) => {
+          item.classList.toggle('dropdown-menu-item-active');
+        });
       });
     </script>
   </body>
