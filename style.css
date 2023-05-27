@@ -53,8 +53,9 @@
 }
 
 h1 {
-  color: white;
   font-size: 8rem;
+  color: transparent;
+  -webkit-text-stroke: 0.5px white;
 }
 
 .glass {
@@ -68,139 +69,45 @@ h1 {
   height: 50px;
   width: 100%;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-#menuToggle {
-  display: block;
-  position: relative;
-  top: 50px;
-  left: 50px;
-
-  z-index: 1;
-
-  -webkit-user-select: none;
-  user-select: none;
-}
-
-#menuToggle a {
-  text-decoration: none;
-  color: #232323;
-
-  transition: color 0.3s ease;
-}
-
-#menuToggle a:hover {
-  color: tomato;
-}
-
-#menuToggle input {
-  display: block;
-  width: 40px;
-  height: 32px;
-  position: absolute;
-  top: -7px;
-  left: -5px;
-
-  cursor: pointer;
-
-  opacity: 0; /* hide this */
-  z-index: 2; /* and place it over the hamburger */
-
-  -webkit-touch-callout: none;
-}
-
-/*
- * Just a quick hamburger
- */
-#menuToggle span {
-  display: block;
-  width: 33px;
-  height: 4px;
-  margin-bottom: 5px;
-  position: relative;
-
-  background: #cdcdcd;
-  border-radius: 3px;
-
-  z-index: 1;
-
-  transform-origin: 4px 0px;
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1),
-    background 0.5s cubic-bezier(0.77, 0.2, 0.05, 1), opacity 0.55s ease;
-}
-
-#menuToggle span:first-child {
-  transform-origin: 0% 0%;
-}
-
-#menuToggle span:nth-last-child(2) {
-  transform-origin: 0% 100%;
-}
-
-/* 
- * Transform all the slices of hamburger
- * into a crossmark.
- */
-#menuToggle input:checked ~ span {
-  opacity: 1;
-  transform: rotate(45deg) translate(-2px, -1px);
-  background: #232323;
-}
-
-/*
- * But let's hide the middle one.
- */
-#menuToggle input:checked ~ span:nth-last-child(3) {
-  opacity: 0;
-  transform: rotate(0deg) scale(0.2, 0.2);
-}
-
-/*
- * Ohyeah and the last one should go the other direction
- */
-#menuToggle input:checked ~ span:nth-last-child(2) {
-  transform: rotate(-45deg) translate(0, -1px);
-}
-
-/*
- * Make this absolute positioned
- * at the top left of the screen
- */
-#menu {
-  position: absolute;
-  display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  width: 100vw;
-  height: 100vh;
-  margin: -100px 0 0 -50px;
-  padding: 50px;
-  padding-top: 125px;
-
-  background: black;
-  list-style-type: none;
-  -webkit-font-smoothing: antialiased;
-  /* to stop flickering of text in safari */
-
-  transform-origin: 0% 0%;
-  transform: translate(0, -100%);
-
-  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1);
 }
 
-#menu li {
-  padding: 10px 0;
-  font-size: 6rem;
-  color: white;
-}
-
-/*
- * And let's slide it in from the left
- */
-#menuToggle input:checked ~ ul {
-  transform: none;
+.blob {
+  width: 440px;
+  height: 440px;
+  border-radius: 15rem;
+  position: absolute;
+  background: radial-gradient(
+      63.62% 69.52% at 100% 0%,
+      rgba(247, 214, 98, 0.8) 0%,
+      rgba(247, 214, 98, 0.168) 52.08%,
+      rgba(247, 214, 98, 0) 100%
+    ),
+    linear-gradient(
+      208.42deg,
+      #f0422a 7.46%,
+      rgba(240, 88, 42, 0.18) 42.58%,
+      rgba(240, 101, 42, 0) 64.13%
+    ),
+    radial-gradient(
+      114.51% 122.83% at 0% -15.36%,
+      #e74f6a 0%,
+      rgba(231, 79, 106, 0.22) 66.72%,
+      rgba(231, 79, 106, 0) 100%
+    ),
+    linear-gradient(
+      333.95deg,
+      rgba(83, 208, 236, 0.85) -7.76%,
+      rgba(83, 208, 236, 0.204) 19.67%,
+      rgba(138, 137, 190, 0) 35.42%
+    ),
+    radial-gradient(
+      109.15% 148.57% at 4.46% 98.44%,
+      #1b3180 0%,
+      rgba(27, 49, 128, 0) 100%
+    ),
+    linear-gradient(141.57deg, #4eadeb 19.08%, rgba(78, 173, 235, 0) 98.72%);
+  background-blend-mode: normal, normal, normal, normal, multiply, normal;
+  filter: blur(100px);
 }
