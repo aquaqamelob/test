@@ -9,10 +9,20 @@
   </head>
   <body>
     <div class="navbar glass">
+      <div class="dropdown dropdown-disabled">
+        <div class="dropdown-menu">
+          <a href="">a</a>
+          <a href="">a</a>
+          <a href="">a</a>
+          <a href="">a</a>
+          <a href="">a</a>
+        </div>
+      </div>
       <a href="#blue">blue</a>
       <a href="#green">green</a>
       <a href="#red">red</a>
       <img src="crown2.png" alt="crown" class="logo-img" />
+      <div id="dropdown-toggle" class="toggle">X</div>
     </div>
 
     <div class="container">
@@ -24,7 +34,7 @@
         <h1>Hello</h1>
       </div>
       <div class="div red" id="red">
-        <h1>Hello</h1>
+        <h1 class="text">Hello</h1>
       </div>
       <div class="div3 yellow" id="yellow">
         <h1>Hello</h1>
@@ -34,6 +44,14 @@
       </div>
     </div>
 
-    <script></script>
+    <script>
+      const dropdown = document.querySelector('.dropdown');
+      const dropdownToggle = document.querySelector('#dropdown-toggle');
+
+      dropdownToggle.addEventListener('click', () => {
+        dropdown.classList.toggle('dropdown-disabled');
+        dropdown.classList.toggle('dropdown-active');
+      });
+    </script>
   </body>
 </html>

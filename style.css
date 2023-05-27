@@ -10,11 +10,36 @@ html {
   height: 100vh;
   width: 100vw;
 }
-/* :root {
-} */
 
-::-webkit-scrollbar {
-  display: none;
+*::-webkit-scrollbar {
+  width: 5px;
+  z-index: 10;
+  position: fixed;
+}
+*::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background-color: #212121;
+}
+
+*::-webkit-scrollbar-track:hover {
+  background-color: #212121;
+}
+
+*::-webkit-scrollbar-track:active {
+  background-color: #212121;
+}
+
+*::-webkit-scrollbar-thumb {
+  border-radius: 20px;
+  background-color: #5d5d5d;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #4a4a4a;
+}
+
+*::-webkit-scrollbar-thumb:active {
+  background-color: #424242;
 }
 
 .container {
@@ -82,8 +107,8 @@ html {
 
 h1 {
   font-size: 8rem;
-  color: transparent;
-  -webkit-text-stroke: 0.5px white;
+  /* color: transparent;
+  -webkit-text-stroke: 0.5px white; */
 }
 
 .glass {
@@ -110,36 +135,47 @@ h1 {
   top: 50px;
   left: 50px;
 
-  background: radial-gradient(
-      63.62% 69.52% at 100% 0%,
-      rgba(247, 214, 98, 0.8) 0%,
-      rgba(247, 214, 98, 0.168) 52.08%,
-      rgba(247, 214, 98, 0) 100%
-    ),
-    linear-gradient(
-      208.42deg,
-      #f0422a 7.46%,
-      rgba(240, 88, 42, 0.18) 42.58%,
-      rgba(240, 101, 42, 0) 64.13%
-    ),
-    radial-gradient(
-      114.51% 122.83% at 0% -15.36%,
-      #e74f6a 0%,
-      rgba(231, 79, 106, 0.22) 66.72%,
-      rgba(231, 79, 106, 0) 100%
-    ),
-    linear-gradient(
-      333.95deg,
-      rgba(83, 208, 236, 0.85) -7.76%,
-      rgba(83, 208, 236, 0.204) 19.67%,
-      rgba(138, 137, 190, 0) 35.42%
-    ),
-    radial-gradient(
-      109.15% 148.57% at 4.46% 98.44%,
-      #1b3180 0%,
-      rgba(27, 49, 128, 0) 100%
-    ),
-    linear-gradient(141.57deg, #4eadeb 19.08%, rgba(78, 173, 235, 0) 98.72%);
-  background-blend-mode: normal, normal, normal, normal, multiply, normal;
+  background: linear-gradient(
+    141.57deg,
+    #4eaceb73 19.08%,
+    rgba(30, 136, 207, 0.349) 98.72%
+  );
+  background-blend-mode: normal;
   filter: blur(100px);
+}
+
+.text {
+  font-size: 17rem;
+  color: transparent;
+  background-image: url('ocean2.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text; /* For WebKit-based browsers */
+  -webkit-text-fill-color: transparent; /* For WebKit-based browsers */
+}
+
+.dropdown {
+  width: 100vw;
+  backdrop-filter: saturate(180%) blur(20px);
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 5;
+  transition: 400ms cubic-bezier(0.4, 0.01, 0.165, 0.99) all;
+}
+
+.dropdown-active {
+  height: 100vh;
+  display: block;
+  position: fixed;
+  top: 50px;
+  opacity: 1;
+}
+
+.dropdown-disabled {
+  height: 0vh;
+  opacity: 0;
+}
+
+.toggle {
+  color: white;
 }
