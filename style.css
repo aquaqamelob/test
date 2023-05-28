@@ -193,6 +193,7 @@ h1 {
 }
 
 .dropdown-menu {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -205,7 +206,7 @@ h1 {
 }
 
 .dropdown-menu-item {
-  font-size: 10rem;
+  font-size: 8rem;
   text-decoration: none;
   color: white;
   filter: brightness(80%);
@@ -244,4 +245,25 @@ h1 {
 
 .line-2 {
   transform: rotate(-45deg) translate(3px, -3px);
+}
+
+@media screen and (max-width: 767px) {
+  .dropdown-menu-item {
+    font-size: 5rem;
+  }
+
+  h1 {
+    font-size: 5rem;
+  }
+
+  .text {
+    font-size: 5rem;
+    color: transparent;
+    background-image: url('ocean2.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text; /* For WebKit-based browsers */
+    -webkit-text-fill-color: transparent; /* For WebKit-based browsers */
+  }
 }
