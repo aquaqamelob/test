@@ -37,21 +37,30 @@
 
     <div class="dropdown dropdown-disabled">
       <div class="dropdown-menu">
-        <a href="">a</a>
-        <a href="">a</a>
-        <a href="">a</a>
-        <a href="">a</a>
-        <a href="">a</a>
+        <a href="" class="dropdown-menu-item">Home</a>
+        <a href="" class="dropdown-menu-item">Shop</a>
+        <a href="" class="dropdown-menu-item">About us</a>
+        <a href="" class="dropdown-menu-item">Contact us</a>
       </div>
     </div>
 
     <script>
       const dropdown = document.querySelector('.dropdown');
       const dropdownToggle = document.querySelector('#dropdown-toggle');
+      const dropdownItems = document.querySelectorAll('a');
+      const dropdownMenu = document.querySelector('.dropdown-menu');
+      const lines = document.querySelectorAll('.line');
 
       dropdownToggle.addEventListener('click', () => {
         dropdown.classList.toggle('dropdown-disabled');
         dropdown.classList.toggle('dropdown-active');
+        dropdownMenu.classList.toggle('dropdown-menu-active');
+        dropdownItems.forEach((item) => {
+          item.classList.toggle('dropdown-menu-item-active');
+        });
+
+        lines[0].classList.toggle('line-1');
+        lines[1].classList.toggle('line-2');
       });
     </script>
   </body>
